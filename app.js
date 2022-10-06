@@ -7,6 +7,12 @@ const water = document.getElementById("water")
 const btn = document.querySelector(".btn");
 const header = document.getElementById('header');
 const ab = document.querySelector(".about")
+const menuBtn = document.querySelector(".menu_btn")
+const links = document.querySelector('.nav-links')
+const link = document.querySelectorAll('.nav-link')
+
+
+console.log(link)
 
 let abTop = ab.getBoundingClientRect().top
 
@@ -24,3 +30,13 @@ window.addEventListener('scroll',()=>{
 
 })
 
+menuBtn.addEventListener('click',()=>{
+    console.log('clicked')
+    links.classList.toggle("show")
+})
+
+link.forEach(element => {
+    element.addEventListener("click", ()=>{
+        links.classList.remove('show')
+    })
+});
